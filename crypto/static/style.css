@@ -1,0 +1,196 @@
+:root {
+    --fundo: #07090d;
+    --cartao: #0f141b;
+    --campo: #171e28;
+    --borda: #243040;
+    --texto: #d7e3f4;
+    --suave: #7f90a8;
+    --neon: #00ff9c;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    font-family: "JetBrains Mono", "Fira Code", Consolas, monospace;
+    color: var(--texto);
+    background:
+        radial-gradient(circle at 50% 0%, rgba(0, 255, 156, 0.12), transparent 55%),
+        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        var(--fundo);
+    background-size: auto, 40px 40px, 40px 40px, auto;
+}
+
+.cartao {
+    width: 100%;
+    max-width: 620px;
+    padding: 36px;
+    background: var(--cartao);
+    border: 1px solid var(--borda);
+    border-radius: 18px;
+    box-shadow: 0 0 60px rgba(0, 255, 156, 0.08);
+}
+
+h1 {
+    font-size: 2.6rem;
+    letter-spacing: 4px;
+}
+
+.cifrao {
+    color: var(--neon);
+    text-shadow: 0 0 18px var(--neon);
+    animation: piscar 1.4s infinite;
+}
+
+@keyframes piscar {
+    50% {
+        opacity: 0.35;
+    }
+}
+
+.subtitulo {
+    margin: 6px 0 26px;
+    font-size: 0.85rem;
+    color: var(--suave);
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--suave);
+}
+
+.modos {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 24px;
+}
+
+.modo {
+    flex: 1;
+    padding: 12px;
+    font: inherit;
+    font-weight: bold;
+    color: var(--suave);
+    background: var(--campo);
+    border: 1px solid var(--borda);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.modo:hover {
+    color: var(--texto);
+}
+
+.modo.ativo {
+    color: var(--fundo);
+    background: var(--neon);
+    border-color: var(--neon);
+    box-shadow: 0 0 18px rgba(0, 255, 156, 0.4);
+}
+
+textarea,
+.saida {
+    width: 100%;
+    min-height: 110px;
+    padding: 14px;
+    font: inherit;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--texto);
+    background: var(--campo);
+    border: 1px solid var(--borda);
+    border-radius: 10px;
+    word-break: break-word;
+    white-space: pre-wrap;
+}
+
+textarea {
+    resize: none;
+    margin-bottom: 22px;
+    outline: none;
+    transition: 0.2s;
+}
+
+textarea:focus {
+    border-color: var(--neon);
+    box-shadow: 0 0 0 3px rgba(0, 255, 156, 0.15);
+}
+
+.saida {
+    color: var(--neon);
+    margin-bottom: 22px;
+}
+
+.chave {
+    margin-bottom: 22px;
+}
+
+.chave strong {
+    color: var(--neon);
+    font-size: 1rem;
+}
+
+input[type="range"] {
+    width: 100%;
+    accent-color: var(--neon);
+    cursor: pointer;
+}
+
+.botoes {
+    display: flex;
+    gap: 10px;
+}
+
+.botao {
+    padding: 11px 22px;
+    font: inherit;
+    font-weight: bold;
+    color: var(--texto);
+    background: var(--campo);
+    border: 1px solid var(--borda);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.botao:hover {
+    border-color: var(--neon);
+    transform: translateY(-2px);
+}
+
+.botao.principal {
+    color: var(--fundo);
+    background: var(--neon);
+    border-color: var(--neon);
+}
+
+.status {
+    min-height: 1.2em;
+    margin-top: 18px;
+    font-size: 0.75rem;
+    color: var(--suave);
+}
+
+@media (max-width: 480px) {
+    .cartao {
+        padding: 22px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+}

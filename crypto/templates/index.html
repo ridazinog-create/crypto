@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRYPTO$</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <main class="cartao">
+        <header>
+            <h1>CRYPTO<span class="cifrao">$</span></h1>
+            <p class="subtitulo">Criptografe e descriptografe palavras e frases em tempo real</p>
+        </header>
+
+        <div class="modos">
+            <button class="modo ativo" data-modo="cifrar">Criptografar</button>
+            <button class="modo" data-modo="decifrar">Descriptografar</button>
+        </div>
+
+        <label for="entrada">Texto de entrada</label>
+        <textarea id="entrada" placeholder="Digite uma palavra ou frase..." spellcheck="false"></textarea>
+
+        <div class="chave">
+            <label for="chave">Chave: <strong id="valor-chave">3</strong></label>
+            <input type="range" id="chave" min="1" max="25" value="3">
+        </div>
+
+        <label>Resultado</label>
+        <div id="saida" class="saida"></div>
+
+        <div class="botoes">
+            <button id="copiar" class="botao principal">Copiar</button>
+            <button id="inverter" class="botao">Inverter</button>
+            <button id="limpar" class="botao">Limpar</button>
+        </div>
+
+        <p id="status" class="status"></p>
+    </main>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
